@@ -1,0 +1,10 @@
+C:\Users\C J Waldron\Documents\Visual Studio 2010\Projects\cis375projectmysqlDB\bin\cis375projectmysqlDB.dll
+C:\Users\C J Waldron\Documents\Visual Studio 2010\Projects\cis375projectmysqlDB\bin\cis375projectmysqlDB.pdb
+C:\Users\C J Waldron\Documents\Visual Studio 2010\Projects\cis375projectmysqlDB\obj\Debug\cis375projectmysqlDB.dll
+C:\Users\C J Waldron\Documents\Visual Studio 2010\Projects\cis375projectmysqlDB\obj\Debug\cis375projectmysqlDB.pdb
+C:\Users\C J Waldron\Documents\Visual Studio 2010\Projects\cis375projectmysqlDB\obj\Debug\cis375projectmysqlDB.csprojResolveAssemblyReference.cache
+C:\Users\Charles Waldron\Desktop\cis375projectmysqlDB\bin\cis375projectmysqlDB.dll
+C:\Users\Charles Waldron\Desktop\cis375projectmysqlDB\bin\cis375projectmysqlDB.pdb
+C:\Users\Charles Waldron\Desktop\cis375projectmysqlDB\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Charles Waldron\Desktop\cis375projectmysqlDB\obj\Debug\cis375projectmysqlDB.dll
+C:\Users\Charles Waldron\Desktop\cis375projectmysqlDB\obj\Debug\cis375projectmysqlDB.pdb

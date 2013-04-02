@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="cis375projectmysqlDB.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" type="text/css" href="StyleSheet1.css">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<h1>
+TODD ONLINE AUCTION 
+</h1>
+<p>
+    &nbsp;</p>
+<body>
+    <form id="form1" runat="server">
+    <asp:Button ID="headerHomeBT" runat="server" BackColor="Blue" ForeColor="White" 
+        onclick="headerHomeBT_Click" Text="Home" />
+    <asp:Button ID="headerLogoutBT" runat="server" BackColor="Blue" 
+        ForeColor="White" Text="Logout" onclick="headerLogoutBT_Click" />
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+<f>
+Triangle of death developers 2013
+</f>
+</html>
