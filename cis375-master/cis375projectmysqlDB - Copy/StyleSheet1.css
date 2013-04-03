@@ -1,0 +1,17 @@
+﻿h1
+{
+    background-color:Yellow;
+    text-align:center;
+    color:Navy;
+    font-size:x-large;
+    height:70px;
+}
+
+body 
+{
+    border-style: groove;
+    border-color: Gray;
+    margin: 15px;
+    height:auto;
+    }
+

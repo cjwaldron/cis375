@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="cis375projectmysqlDB.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <link rel="stylesheet" type="text/css" href="StyleSheet1.css">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+
+    </asp:ContentPlaceHolder>
+</head>
+<form id="form1" runat="server">
+<h1>
+
+    <asp:TextBox ID="userIdStorage" runat="server" Height="28px" Visible="False" 
+        Width="16px"></asp:TextBox>
+TODD ONLINE AUCTION 
+    <asp:Label ID="Label1" runat="server" style="float:right" BackColor="Yellow" 
+        BorderStyle="None" Height="20px" Width="170px" Font-Size="X-Small" 
+        ForeColor="Black"></asp:Label>
+
+    <asp:Button ID="headerHomeBT" runat="server" style="float:left" BackColor="Blue" ForeColor="White" 
+        onclick="headerHomeBT_Click" Text="Home" />
+    <asp:Button ID="headerLogoutBT" runat="server" style="float:left" BackColor="Blue" 
+        ForeColor="White" Text="Logout" onclick="headerLogoutBT_Click" />
+    <asp:Button ID="headerUserpageBT" runat="server" style="float:left" BackColor="Blue" 
+        ForeColor="White" Text="UserPage" onclick="headerUserpagtBT_Click" 
+        Visible="False" Width="100px" />
+
+</h1>
+<body>
+
+  
+    
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+</body> 
+</form>
+</html>
