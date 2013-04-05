@@ -13,7 +13,7 @@ namespace cis375projectmysqlDB
 {
     public partial class item : System.Web.UI.Page
     {
-        int userid = 0;
+        int userid = pageSecurity.getUserID();
         protected void Page_Load(object sender, EventArgs e)
         {
             bool security=false;

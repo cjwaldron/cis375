@@ -11,6 +11,18 @@ using System.Text;
 
 namespace cis375projectmysqlDB
 {
+    public static class itemID
+    {
+        static int currentItemId=0;
+        public static void setItemId(int id)
+        {
+            currentItemId = id;
+        }
+        public static int getItemId()
+        {
+            return currentItemId;
+        }
+    }
     public static class pageSecurity
     {
         static Boolean isLoggedin = false;

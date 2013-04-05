@@ -1,9 +1,11 @@
 ﻿h1
 {
-    background-color:Yellow;
+    border-style: groove;
+    border-color: Gray;
+    margin: 15px;
     text-align:center;
-    color:Navy;
-    font-size:x-large;
+    color:Blue;
+    background-color:Yellow;
     height:70px;
 }
 
@@ -13,5 +15,19 @@ body
     border-color: Gray;
     margin: 15px;
     height:auto;
-    }
+    background-color:Silver;
+    background-image:url('C:\Users\C J Waldron\Desktop\cis375-master\cis375projectmysqlDB - Copy\images\photo-2.jpg');
+    margin-left:20px;
+}
+
+footer
+{
+    border-style: groove;
+    border-color: Gray;
+    margin: 15px;
+    height:25px;
+    background-color:Yellow;
+    font-size:small;
+    text-align:center;
+}
 

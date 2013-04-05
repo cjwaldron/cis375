@@ -8,21 +8,52 @@
     <asp:Panel ID="Panel1" runat="server">
         <asp:Panel ID="Panel2" runat="server" 
             style="margin-left:100px; margin-top:30px; margin-bottom:30px;" 
-            Height="32px" Width="94px">
-            <asp:Button ID="Button1" runat="server" Text="All Items" 
-                style="margin-right: 10px;" onclick="Button1_Click" /> 
+            Height="32px" Width="944px">
+            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" 
+                onselectedindexchanged="DropDownList1_SelectedIndexChanged" 
+                style="margin-right: 10px;">
+                <asp:ListItem Selected="True"></asp:ListItem>
+                <asp:ListItem>Sports</asp:ListItem>
+                <asp:ListItem>Clothes</asp:ListItem>
+                <asp:ListItem>Books</asp:ListItem>
+                <asp:ListItem>Computer</asp:ListItem>
+                <asp:ListItem>Other</asp:ListItem>
+            </asp:DropDownList>
+            Search By Category&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="KeywordTB" runat="server" style="margin-right: 10px;" 
+                Width="164px"></asp:TextBox>
+            Search by keyword
+            <asp:Button ID="Button2" runat="server" onclick="Button2_Click" 
+                style="margin-right: 10px;" Text="Search" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button1" runat="server" onclick="Button1_Click" 
+                style="margin-right: 10px;" Text="All Items" />
             
          </asp:Panel>
-            <asp:Panel ID="Panel3" runat="server"  ScrollBars="Auto" 
-                style="margin-top:30px; margin-right: 17px;"  Visible="false" 
-                Height="250px">
+            <asp:Panel ID="Panel3" runat="server"  ScrollBars="Vertical" 
+                style="margin-top:30px; margin-right: 17px;"  Visible="false">
                 <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" 
-                    onselectedindexchanged="GridView1_SelectedIndexChanged">
+                    BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" 
+                    CellPadding="3" GridLines="Vertical">  
+                    
+                    <AlternatingRowStyle BackColor="#DCDCDC"/>
                     <Columns>
-                        <asp:ButtonField CommandName="Cancel" Text="See Item" ButtonType="Button" />
-                        <asp:ImageField>
-                        </asp:ImageField>
+                       <asp:TemplateField ShowHeader="False">
+                            <ItemTemplate>
+                                <asp:Button ID="viewItemBT" runat="server"  CommandName="saveItemID"
+                                 CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="view item" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
+                    <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                    <HeaderStyle BackColor="Blue" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                    <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#000065" />
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:cis375projectConnectionString2 %>" 
@@ -31,52 +62,57 @@
                 </asp:SqlDataSource>
                 
             </asp:Panel>
-            <asp:Panel ID="Panel4" runat="server" Height="250px" ScrollBars="Auto">
-                <asp:DropDownList ID="DropDownList1" runat="server" style="margin-right: 10px;" 
-                    onselectedindexchanged="DropDownList1_SelectedIndexChanged"  AutoPostBack="true" >
-                    <asp:ListItem Selected="True"></asp:ListItem>
-                    <asp:ListItem>Sports</asp:ListItem>
-                    <asp:ListItem>Clothes</asp:ListItem>
-                    <asp:ListItem>Books</asp:ListItem>
-                    <asp:ListItem>Computer</asp:ListItem>
-                    <asp:ListItem>Other</asp:ListItem>
-                </asp:DropDownList>
-                Search By Category<br />
+            <asp:Panel ID="Panel4" runat="server" ScrollBars="Auto" Visible="false">
+                <br />
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:cis375projectConnectionString2 %>" 
                     ProviderName="<%$ ConnectionStrings:cis375projectConnectionString2.ProviderName %>" 
-                    
                     SelectCommand="SELECT title, category, itemid, description, enddate, price, buyitnow FROM item WHERE (category = ?)">
                     <SelectParameters>
                     <asp:ControlParameter name="category" ControlID="DropDownList1" PropertyName="SelectedValue" Type="String" />
-                     </SelectParameters> 
-                </asp:SqlDataSource>
+                    </SelectParameters>
+                    </asp:SqlDataSource>
                 <asp:GridView ID="GridView2" runat="server" 
-                    DataSourceID="SqlDataSource2"   Heigth="250px">
+                    DataSourceID="SqlDataSource2" BackColor="White" BorderColor="#999999" 
+                    BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
+                    <AlternatingRowStyle BackColor="#DCDCDC" />
                     <Columns>
-                        <asp:ButtonField ButtonType="Button" Text="See Item" />
                         <asp:ImageField>
                         </asp:ImageField>
+                        <asp:HyperLinkField NavigateUrl="~/item.aspx" Text="see item" />
                     </Columns>
+                    <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                    <HeaderStyle BackColor="Blue" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                    <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#000065" />
                 </asp:GridView>
-
-
-
             </asp:Panel>
     </asp:Panel>
-    <asp:Panel ID="Panel5" runat="server" Height="250px">
-        Search by keyword
-        <asp:TextBox ID="KeywordTB" runat="server" style="margin-right: 10px;" 
-                Width="164px"></asp:TextBox>
-        <asp:Button ID="Button2" runat="server" Text="Search" 
-                style="margin-right: 10px;" onclick="Button2_Click" />
+    <asp:Panel ID="Panel5" runat="server" Visible="false">
         <br />
-        <asp:GridView ID="GridView3" runat="server" DataSourceID="SqlDataSource3">
+        <asp:GridView ID="GridView3" runat="server" DataSourceID="SqlDataSource3" 
+            BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" 
+            CellPadding="3" GridLines="Vertical">
+            <AlternatingRowStyle BackColor="#DCDCDC" />
             <Columns>
-                <asp:ButtonField ButtonType="Button" Text="See Item" />
                 <asp:ImageField>
                 </asp:ImageField>
+                <asp:HyperLinkField NavigateUrl="~/item.aspx" Text="see item" />
             </Columns>
+            <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+            <HeaderStyle BackColor="Blue" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+            <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#0000A9" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#000065" />
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
             ConnectionString="<%$ ConnectionStrings:cis375projectConnectionString2 %>" 
@@ -89,5 +125,6 @@
                     PropertyName="Text" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
+        
     </asp:Panel>
 </asp:Content>

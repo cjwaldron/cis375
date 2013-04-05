@@ -24,17 +24,43 @@ namespace cis375projectmysqlDB
         protected void Button1_Click(object sender, EventArgs e)
         {
             Panel3.Visible = true;
+            Panel4.Visible = false;
+            Panel5.Visible = false;
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            Panel4.Visible = true;
+            Panel3.Visible = false;
+            Panel5.Visible = false;
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
+            Panel5.Visible = true;
+            Panel3.Visible = false;
+            Panel4.Visible = false;
         }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "saveItemID")
+            {
+                 int index = Convert.ToInt32(e.CommandArgument);
+                 GridViewRow row = GridView1.Rows[index];
+                 int id = Convert.ToInt32(row);
+            }
+        }
+
+
+
+
+
+
+
+
+
+        public int index { get; set; }
 
         
     }
