@@ -15,14 +15,14 @@ namespace cis375projectmysqlDB
     public partial class listitem : System.Web.UI.Page
     {
         double price,buyItNow;
-        string title, description,category,startDate,endDate,currentTime,mysqlStartDate,mysqlEndDate;
-        
+        string title, description,category,startDate,endDate,userid;
         protected void Page_Load(object sender, EventArgs e)
         {
             bool security = false;
             security = pageSecurity.getLogin();
             if (security == false)
                 Server.Transfer("default.aspx");
+            userid = pageSecurity.getUserID().ToString();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -52,12 +52,33 @@ namespace cis375projectmysqlDB
             qstring.Append(price);
             qstring.Append("','");
             qstring.Append(buyItNow);
-            qstring.Append("','8')");
+            qstring.Append("',");
+            qstring.Append(userid);
+            qstring.Append(")");
             string sqlquery = qstring.ToString();
             command.CommandText = sqlquery;
             conn.Open();
             MySqlDataReader reader = command.ExecuteReader();
+            reader.Close();
+            ////////////add item to listed////////////
+            StringBuilder q_string = new StringBuilder("SELECT MAX(itemid) FROM item WHERE iduser = ");
+            q_string.Append(pageSecurity.getUserID().ToString());
+            string sql_query = q_string.ToString();
+            command.CommandText = sql_query;
+            MySqlDataReader reader1 = command.ExecuteReader();
+            reader1.Read();
+            string itemid = reader1[0].ToString();
+            reader1.Close();
+            StringBuilder insert_itemid = new StringBuilder("INSERT INTO listed (itemid) VALUES (");
+            insert_itemid.Append(itemid);
+            insert_itemid.Append(")");
+            string insert_itemID = insert_itemid.ToString();
+            command.CommandText = insert_itemID;
+            MySqlDataReader reader2 = command.ExecuteReader();
+            reader2.Read();
+            reader2.Close();
             conn.Close();
+            Server.Transfer("user.aspx");
         }
 
        
@@ -65,6 +86,14 @@ namespace cis375projectmysqlDB
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
            
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+            FileUpload1.SaveAs(Server.MapPath("~/images"));
+             
+  
         }
 
     }

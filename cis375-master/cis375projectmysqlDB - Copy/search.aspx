@@ -34,16 +34,16 @@
                 style="margin-top:30px; margin-right: 17px;"  Visible="false">
                 <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" 
                     BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" 
-                    CellPadding="3" GridLines="Vertical">  
-                    
+                    CellPadding="3" GridLines="Vertical" >
                     <AlternatingRowStyle BackColor="#DCDCDC"/>
                     <Columns>
-                       <asp:TemplateField ShowHeader="False">
+                       <asp:TemplateField HeaderText="View Item" >
                             <ItemTemplate>
-                                <asp:Button ID="viewItemBT" runat="server"  CommandName="saveItemID"
-                                 CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="view item" />
+                            <asp:Button ID="Gridview1Btn" runat="server" 
+                            Text="See Item" CommandArgument="GridBtn"
+                            onclick="Gridview1Btn_Click"/>
                             </ItemTemplate>
-                        </asp:TemplateField>
+                            </asp:TemplateField>
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                     <HeaderStyle BackColor="Blue" Font-Bold="True" ForeColor="White" />
@@ -60,26 +60,22 @@
                     ProviderName="<%$ ConnectionStrings:cis375projectConnectionString2.ProviderName %>" 
                     SelectCommand="SELECT itemid, title, category, description, enddate, price, buyitnow FROM item">
                 </asp:SqlDataSource>
-                
             </asp:Panel>
+
+
             <asp:Panel ID="Panel4" runat="server" ScrollBars="Auto" Visible="false">
-                <br />
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:cis375projectConnectionString2 %>" 
-                    ProviderName="<%$ ConnectionStrings:cis375projectConnectionString2.ProviderName %>" 
-                    SelectCommand="SELECT title, category, itemid, description, enddate, price, buyitnow FROM item WHERE (category = ?)">
-                    <SelectParameters>
-                    <asp:ControlParameter name="category" ControlID="DropDownList1" PropertyName="SelectedValue" Type="String" />
-                    </SelectParameters>
-                    </asp:SqlDataSource>
-                <asp:GridView ID="GridView2" runat="server" 
+                    <asp:GridView ID="GridView2" runat="server" 
                     DataSourceID="SqlDataSource2" BackColor="White" BorderColor="#999999" 
                     BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
                     <AlternatingRowStyle BackColor="#DCDCDC" />
                     <Columns>
-                        <asp:ImageField>
-                        </asp:ImageField>
-                        <asp:HyperLinkField NavigateUrl="~/item.aspx" Text="see item" />
+                        <asp:TemplateField HeaderText="View Item" >
+                            <ItemTemplate>
+                            <asp:Button ID="Gridview2Btn" runat="server" 
+                            Text="See Item" CommandArgument="GridBtn"
+                            onclick="GridView2Btn_Click"/>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                     <HeaderStyle BackColor="Blue" Font-Bold="True" ForeColor="White" />
@@ -91,18 +87,30 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#000065" />
                 </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:cis375projectConnectionString2 %>" 
+                    ProviderName="<%$ ConnectionStrings:cis375projectConnectionString2.ProviderName %>" 
+                    SelectCommand="SELECT itemid, title, category, description, enddate, price, buyitnow FROM item WHERE (category = ?)">
+                    <SelectParameters>
+                    <asp:ControlParameter name="category" ControlID="DropDownList1" PropertyName="SelectedValue" Type="String" />
+                    </SelectParameters>
+                    </asp:SqlDataSource>
             </asp:Panel>
     </asp:Panel>
     <asp:Panel ID="Panel5" runat="server" Visible="false">
         <br />
         <asp:GridView ID="GridView3" runat="server" DataSourceID="SqlDataSource3" 
             BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" 
-            CellPadding="3" GridLines="Vertical">
+            CellPadding="3" GridLines="Vertical" >
             <AlternatingRowStyle BackColor="#DCDCDC" />
             <Columns>
-                <asp:ImageField>
-                </asp:ImageField>
-                <asp:HyperLinkField NavigateUrl="~/item.aspx" Text="see item" />
+               <asp:TemplateField HeaderText="View Item" >
+                            <ItemTemplate>
+                            <asp:Button ID="Gridview3Btn" runat="server" 
+                            Text="See Item" CommandArgument="GridBtn"
+                            onclick="GridView3Btn_Click"/>
+                            </ItemTemplate>
+               </asp:TemplateField>
             </Columns>
             <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
             <HeaderStyle BackColor="Blue" Font-Bold="True" ForeColor="White" />

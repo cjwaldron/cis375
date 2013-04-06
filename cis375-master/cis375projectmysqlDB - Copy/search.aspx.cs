@@ -42,25 +42,38 @@ namespace cis375projectmysqlDB
             Panel4.Visible = false;
         }
 
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+    
+        protected void Gridview1Btn_Click(object sender, EventArgs e)
         {
-            if (e.CommandName == "saveItemID")
-            {
-                 int index = Convert.ToInt32(e.CommandArgument);
-                 GridViewRow row = GridView1.Rows[index];
-                 int id = Convert.ToInt32(row);
-            }
+            GridViewRow gvRow = (GridViewRow)(sender as Control).Parent.Parent;
+            int index = gvRow.RowIndex;
+            string itemid = GridView1.Rows[index].Cells[1].Text;
+            itemID.setItemId(Convert.ToInt32(itemid));
+            Server.Transfer("item.aspx");
         }
 
+        protected void GridView2Btn_Click(object sender, EventArgs e)
+        {
+            GridViewRow gvRow = (GridViewRow)(sender as Control).Parent.Parent;
+            int index = gvRow.RowIndex;
+            string itemid = GridView2.Rows[index].Cells[1].Text;
+            itemID.setItemId(Convert.ToInt32(itemid));
+            Server.Transfer("item.aspx");
+
+        }
+
+        protected void GridView3Btn_Click(object sender, EventArgs e)
+        {
+            GridViewRow gvRow = (GridViewRow)(sender as Control).Parent.Parent;
+            int index = gvRow.RowIndex;
+            string itemid = GridView3.Rows[index].Cells[1].Text;
+            itemID.setItemId(Convert.ToInt32(itemid));
+            Server.Transfer("item.aspx");
 
 
+        }
 
-
-
-
-
-
-        public int index { get; set; }
+ 
 
         
     }

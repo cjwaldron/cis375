@@ -1,5 +1,6 @@
 ﻿h1
 {
+    width:auto;
     border-style: groove;
     border-color: Gray;
     margin: 15px;
@@ -11,17 +12,18 @@
 
 body 
 {
+    width:auto;
     border-style: groove;
     border-color: Gray;
     margin: 15px;
     height:auto;
     background-color:Silver;
-    background-image:url('C:\Users\C J Waldron\Desktop\cis375-master\cis375projectmysqlDB - Copy\images\photo-2.jpg');
     margin-left:20px;
 }
 
 footer
 {
+    width:auto;
     border-style: groove;
     border-color: Gray;
     margin: 15px;
