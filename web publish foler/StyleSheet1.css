@@ -1,0 +1,35 @@
+﻿h1
+{
+    width:auto;
+    border-style: groove;
+    border-color: Gray;
+    margin: 15px;
+    text-align:center;
+    color:Blue;
+    background-color:Yellow;
+    height:70px;
+}
+
+body 
+{
+    width:auto;
+    border-style: groove;
+    border-color: Gray;
+    margin: 15px;
+    height:auto;
+    background-color:Silver;
+    margin-left:20px;
+}
+
+footer
+{
+    width:auto;
+    border-style: groove;
+    border-color: Gray;
+    margin: 15px;
+    height:25px;
+    background-color:Yellow;
+    font-size:small;
+    text-align:center;
+}
+

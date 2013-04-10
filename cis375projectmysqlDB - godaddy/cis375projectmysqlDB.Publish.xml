@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Users\C J Waldron\Desktop\web publish foler" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="char9679" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAh1q3rBREeEqkjGMsiPVS1AAAAAACAAAAAAAQZgAAAAEAACAAAAA47+FJQjKAt3OJS6ZFma08TsT5Y1FDZnTicD4PdV4kMwAAAAAOgAAAAAIAACAAAAD+xy/CGvndVfvBuYiYveXLQ8tMpgPbSb5GFmwykmSOpCAAAACoBLm3rwfkn//YuK/fNxx2EyRqYmzlw2/rGCPUJIK0/UAAAADF8LBgH1iiA8Ty7pmjTxXZNfO72Nxq0vd223egLjc0uiLag2FZixiUPZLMCnIle97qnQNeK8GXKn8XKOKb73NF" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="04/09/2013 21:13:26" />
+    <file relUrl="newuser.aspx" publishTime="04/09/2013 10:27:00" />
+    <file relUrl="item.aspx" publishTime="04/05/2013 23:07:58" />
+    <file relUrl="images/photo-2.jpg" publishTime="04/04/2013 15:09:50" />
+    <file relUrl="StyleSheet1.css" publishTime="04/05/2013 22:48:00" />
+    <file relUrl="user.aspx" publishTime="04/09/2013 21:18:35" />
+    <file relUrl="bin/cis375projectmysqlDB.pdb" publishTime="04/09/2013 21:13:26" />
+    <file relUrl="listitem.aspx" publishTime="04/09/2013 12:16:45" />
+    <file relUrl="bin/cis375projectmysqlDB.dll" publishTime="04/09/2013 21:13:26" />
+    <file relUrl="loginerror.aspx" publishTime="04/04/2013 15:09:48" />
+    <file relUrl="Site1.Master" publishTime="04/09/2013 20:44:58" />
+    <file relUrl="search.aspx" publishTime="04/09/2013 11:46:06" />
+    <file relUrl="default.aspx" publishTime="04/09/2013 12:49:40" />
+  </publishProfile>
+</publishData>
